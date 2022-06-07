@@ -24,6 +24,19 @@ public class QuizQuestions {
         }
     }
 
+    public int getSize() {
+        return questions.size();
+    }
+
+    public String readQuestion(int number) {
+        return questions.get(number).getQuestion();
+    }
+
+
+    public String readAnswer(int number) {
+        return answers.get(number).getAnswer();
+    }
+
     public String getName() {
         return this.name;
     }

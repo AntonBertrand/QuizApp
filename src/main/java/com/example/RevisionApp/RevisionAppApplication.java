@@ -67,8 +67,8 @@ public class RevisionAppApplication {
 				case "3":
 					System.out.println("Choose a Quiz:");
 					quiz.readQuizQuestions();
-
 					input = scanner.nextLine();
+					quiz.startQuiz(Integer.parseInt(input));
 
 
 					break;
