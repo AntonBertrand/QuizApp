@@ -65,6 +65,8 @@ public class RevisionAppApplication {
 				case "5":
 					System.exit(0);
 					break;
+				default:
+					System.out.println("Invalid Command - Try Again");
 			}
 
 		}
@@ -91,16 +93,25 @@ public class RevisionAppApplication {
 			System.out.println("Questions:");
 			quizQuestions.readQuestions();
 
-			System.out.println("Add another question? Y/N");
-			input2 = scanner.nextLine();
+			for (boolean flag3 = false; !flag3 ;) {
 
-			if (input2.equals("N")) {
-				System.out.println("Enter a Quiz Name");
+				System.out.println("Add another question? Y/N");
 				input2 = scanner.nextLine();
-				quizQuestions.setName(input2);
 
-				quiz.addQuizQuestions(quizQuestions);
-				break;
+				if (input2.equals("N")) {
+					System.out.println("Enter a Quiz Name");
+					input2 = scanner.nextLine();
+					quizQuestions.setName(input2);
+
+					quiz.addQuizQuestions(quizQuestions);
+					System.out.println("Quiz Added!");
+					flag3 = true;
+					flag2 = false;
+				} else if (input2.equals("Y")) {
+					flag3 = true;
+				} else {
+					System.out.println("Invalid Command");
+				}
 			}
 
 		}

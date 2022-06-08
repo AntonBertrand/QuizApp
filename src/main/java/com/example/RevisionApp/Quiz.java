@@ -90,12 +90,18 @@ public class Quiz {
             case "3":
                 category = 23;
                 break;
+            default:
+                System.out.println("Invalid Command - Try Again");
         }
 
+
         System.out.println("Choose a quiz size (Number of questions)");
+
+        while(!scanner2.hasNextInt()){
+            System.out.println("Invalid quiz size! Must be a number - Try Again");
+            scanner2.nextLine();
+        }
         size = scanner2.nextInt();
-
-
 
         try {
 
