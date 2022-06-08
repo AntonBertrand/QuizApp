@@ -142,7 +142,7 @@ public class Quiz {
     }
 
     public static void startPremadeQuiz(JSONArray premadeQuiz) {
-//test
+//testing commit
         String question;
         String answer;
         int score = 0;
