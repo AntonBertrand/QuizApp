@@ -77,6 +77,7 @@ public class Quiz {
 
         Scanner scanner2 = new Scanner(System.in);
         int category = 0;
+        int size = 0;
         String input = scanner2.nextLine();
 
         switch(input) {
@@ -91,10 +92,14 @@ public class Quiz {
                 break;
         }
 
+        System.out.println("Choose a quiz size (Number of questions)");
+        size = scanner2.nextInt();
+
+
 
         try {
 
-            URL url = new URL("https://opentdb.com/api.php?amount=10&category="+category+"&difficulty=easy&type=boolean");
+            URL url = new URL("https://opentdb.com/api.php?amount="+size+"&category="+category+"&difficulty=easy&type=boolean");
 
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -144,15 +149,12 @@ public class Quiz {
         Scanner scanner = new Scanner(System.in);
         String input;
 
-        System.out.println("Quiz Size: 10");
+        System.out.println("Quiz Size: " + premadeQuiz.size());
 
-
-
-        for (int i = 0; i < 10;  i++) {
-
-
+        for (int i = 0; i < premadeQuiz.size();  i++) {
             JSONObject premadeQuiz2 = (JSONObject) premadeQuiz.get(i);
             System.out.println("Question " + (i+1) +": " + premadeQuiz2.get("question"));
+            System.out.println("True or False?");
 
             input = scanner.nextLine();
             if(input.equals(premadeQuiz2.get("correct_answer"))) {
@@ -163,7 +165,7 @@ public class Quiz {
             }
         }
 
-        System.out.println("Quiz Over! Your final score was: " + score + "/10");
+        System.out.println("Quiz Over! Your final score was: " + score + "/" + premadeQuiz.size());
     }
 
 }
