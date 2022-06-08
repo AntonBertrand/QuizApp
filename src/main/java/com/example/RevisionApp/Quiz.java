@@ -53,7 +53,7 @@ public class Quiz {
            System.out.println("Question " + i+1 +": " + question);
 
            input = scanner.nextLine();
-           if(input.equals(answer)) {
+           if(input.equalsIgnoreCase(answer)) {
                System.out.println("Correct!");
                score++;
            } else {
@@ -157,7 +157,7 @@ public class Quiz {
             System.out.println("True or False?");
 
             input = scanner.nextLine();
-            if(input.equals(premadeQuiz2.get("correct_answer"))) {
+            if(input.equalsIgnoreCase(premadeQuiz2.get("correct_answer").toString())) {
                 System.out.println("Correct!");
                 score++;
             } else {
