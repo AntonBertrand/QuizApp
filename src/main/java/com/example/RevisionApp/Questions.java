@@ -11,7 +11,4 @@ public class Questions {
         return question;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
 }

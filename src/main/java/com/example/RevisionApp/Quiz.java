@@ -18,14 +18,6 @@ public class Quiz {
         this.quizQuestions = quizQuestions;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void readQuizQuestions() {
         int i = 1;
         for (QuizQuestions quizQuestions : quizQuestions) {
@@ -77,7 +69,7 @@ public class Quiz {
 
         Scanner scanner2 = new Scanner(System.in);
         int category = 0;
-        int size = 0;
+        int size;
         String input = scanner2.nextLine();
 
         switch(input) {
@@ -149,8 +141,6 @@ public class Quiz {
 
     public static void startPremadeQuiz(JSONArray premadeQuiz) {
 
-        String question;
-        String answer;
         int score = 0;
         Scanner scanner = new Scanner(System.in);
         String input;
